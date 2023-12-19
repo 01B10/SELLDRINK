@@ -13,7 +13,7 @@ interface Props {
 
 const CardSigin = ({ bgColor, icon, color, LoginIn, colorHover, bgColorHover }: Props) => {
   const OAuthLogin = () => {
-    window.open(`${Enviroment()}/auth/${LoginIn}`, '_self')
+    window.open(`${Enviroment()}auth/${LoginIn}`, '_self')
   }
   return (
     <Button
