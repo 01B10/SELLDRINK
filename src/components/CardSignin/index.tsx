@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '@mui/material'
+import Enviroment from '../../utils/checkEnviroment'
 
 interface Props {
   bgColor: string // Màu là mã Hex
@@ -12,7 +13,7 @@ interface Props {
 
 const CardSigin = ({ bgColor, icon, color, LoginIn, colorHover, bgColorHover }: Props) => {
   const OAuthLogin = () => {
-    window.open(`http://localhost:8000/auth/${LoginIn}`, '_self')
+    window.open(`${Enviroment()}/auth/${LoginIn}`, '_self')
   }
   return (
     <Button

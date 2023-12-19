@@ -200,7 +200,7 @@ const Checkout = () => {
           orderAPIFn(dataForm)
             .unwrap()
             .then((res) => {
-              if (res.error || res?.error?.data?.error) {
+              if (res?.error || res?.error?.data?.error) {
                 return toast.error('Đặt hàng thất bại' + res.error.data.error)
               } else {
                 ClientSocket.sendNotificationToAdmin(
