@@ -5,13 +5,15 @@ interface Message {
   bot: string
 }
 
+const apiBotChat = 'https://datn-backend-bot-production.up.railway.app'
+
 const Bot = () => {
   const [messages, setMessages] = useState<Message[]>([])
   const [inputMessage, setInputMessage] = useState<string>('')
 
   const sendMessage = async () => {
     try {
-      const response = await fetch(`http://localhost:3333/ask?query=${inputMessage}`)
+      const response = await fetch(`${apiBotChat}/ask?query=${inputMessage}`)
       const data = await response.json()
       setMessages((prevMessages) => [...prevMessages, { user: inputMessage, bot: data.answer }])
       setInputMessage('')

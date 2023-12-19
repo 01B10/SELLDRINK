@@ -3,8 +3,8 @@
 import http from '../../../api/instance'
 import { message } from 'antd'
 
-const apiBotChat = 'http://localhost:3333'
-// const apiBotChat = 'https://datn-backend-bot-production.up.railway.app'
+// const apiBotChat = 'http://localhost:3333'
+const apiBotChat = 'https://datn-backend-bot-production.up.railway.app'
 // const apiBotChat = 'https://datn-backend-bot.vercel.app'
 
 export const sendMessage = async (inputMessage: string, idUser?: string) => {
