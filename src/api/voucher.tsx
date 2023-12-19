@@ -1,10 +1,10 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import baseQueryWithReAuth from './requestRefresh'
 import { IVoucher, IVoucherDocs } from '../interfaces/voucher.type'
+import { baseQueryWithReauth } from './Auth'
 
 const ApiVoucher = createApi({
   reducerPath: 'Voucher',
-  baseQuery: baseQueryWithReAuth,
+  baseQuery: baseQueryWithReauth,
   tagTypes: ['voucher'],
   endpoints: (builder) => ({
     getAllVouchers: builder.query<IVoucherDocs, number | string>({
