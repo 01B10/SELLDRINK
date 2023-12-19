@@ -1,14 +1,10 @@
 import { Socket, io } from 'socket.io-client'
 import { IOrderCheckout } from './store/slices/types/order.type'
-// import checkEnviroment from './utils/checkEnviroment'
+import checkEnviroment from './utils/checkEnviroment'
 
-const socket: Socket = io('https://duantotnghiep-gsy4.onrender.com', {
+const socket: Socket = io(checkEnviroment(), {
   transports: ['websocket', 'pulling', 'flashsocket']
 })
-
-// const socket: Socket = io(`wss://https://duantotnghiep-gsy4.onrender.com/socket.io/?EIO=4&transport=websocket`, {
-//   transports: ['websocket', 'pulling', 'flashsocket']
-// })
 
 interface Options {
   room?: string
