@@ -1,9 +1,9 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import baseQueryWithReAuth from './requestRefresh'
+import { baseQueryWithReauth } from './Auth'
 
 const ApiNotifications = createApi({
   reducerPath: 'ApiNotifications',
-  baseQuery: baseQueryWithReAuth,
+  baseQuery: baseQueryWithReauth,
   tagTypes: ['Notifications'],
   endpoints: (builder) => ({
     getUnreadNotificationsByidUser: builder.query({
