@@ -1,8 +1,8 @@
 import { Socket, io } from 'socket.io-client'
 import { IOrderCheckout } from './store/slices/types/order.type'
-import checkEnviroment from "./utils/checkEnviroment"
+import checkEnviroment from './utils/checkEnviroment'
 
-const socket: Socket = io(`ws://${checkEnviroment()}`, {
+const socket: Socket = io(`wss://${checkEnviroment()}`, {
   transports: ['websocket', 'pulling', 'flashsocket']
 })
 
